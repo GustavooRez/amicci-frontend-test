@@ -1,6 +1,6 @@
 import React from "react";
-import { WeatherDetailsProps } from "../../interfaces/weatherDetails";
-import {H1WD, H3WD, DivFlexWD, DivWD, PWD, BolderWD, SeparatorWD} from "./index.ts"
+import { WeatherDetailsProps } from "../../interfaces/weatherDetails/index.tsx";
+import {H1WD, H3WD, DivFlex2C, DivFlex3C, DivWD, PWD, BolderWD, SeparatorWD} from "./index.ts"
 
 const weatherDetails = ({ weather }: WeatherDetailsProps) => {
   const formatTimeStamp = (timeStamp: number) => {
@@ -12,7 +12,7 @@ const weatherDetails = ({ weather }: WeatherDetailsProps) => {
       <H1WD>{weather.name}</H1WD>
       <H1WD>{weather.main.temp.toFixed(1)}ºC</H1WD>
       <H3WD>{capitalized(weather.weather[0].description)}</H3WD>
-      <DivFlexWD>
+      <DivFlex2C>
         <DivWD>
           <BolderWD>Úmidade</BolderWD>
           <PWD>{weather.main.humidity}%</PWD>
@@ -21,9 +21,9 @@ const weatherDetails = ({ weather }: WeatherDetailsProps) => {
           <BolderWD>Velocidade dos Ventos</BolderWD>
           <PWD>{weather.wind.speed} MPS</PWD>
         </DivWD>
-      </DivFlexWD>
+      </DivFlex2C>
       <SeparatorWD/>
-      <DivFlexWD>
+      <DivFlex3C columns={3}>
         <DivWD>
           <BolderWD>Sens. Térmica</BolderWD>
           <PWD>{weather.main.feels_like.toFixed(1)}ºC</PWD>
@@ -36,9 +36,9 @@ const weatherDetails = ({ weather }: WeatherDetailsProps) => {
           <BolderWD>Temp. Máxima</BolderWD>
           <PWD>{weather.main.temp_max.toFixed(1)}ºC</PWD>
         </DivWD>
-      </DivFlexWD>
+      </DivFlex3C>
       <SeparatorWD/>
-      <DivFlexWD>
+      <DivFlex2C>
         <DivWD>
           <BolderWD>Nascer do sol</BolderWD>
           <PWD>{formatTimeStamp(weather.sys.sunrise)}</PWD>
@@ -47,7 +47,7 @@ const weatherDetails = ({ weather }: WeatherDetailsProps) => {
           <BolderWD>Por do sol</BolderWD>
           <PWD>{formatTimeStamp(weather.sys.sunset)}</PWD>
         </DivWD>
-      </DivFlexWD>
+      </DivFlex2C>
     </DivWD>
   );
 };

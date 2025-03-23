@@ -20,11 +20,28 @@ export const BolderWD = styled.p`
     color:white;
 `
 
-export const DivFlexWD = styled.div`
-    display:flex;
+export const DivFlex2C = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
     text-align: center;
     color: white;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+`
+
+export const DivFlex3C = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `
 export const DivWD = styled.div`
     width: 100%;
