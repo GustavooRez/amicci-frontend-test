@@ -1,9 +1,10 @@
 import React from "react";
+import { H1WDNF } from "./index.ts";
 
 const weatherNotFound = () => {
   return (
     <div>
-      <p>Cidade não encontrada!</p>
+      <H1WDNF>Cidade não encontrada!</H1WDNF>
     </div>
   );
 };

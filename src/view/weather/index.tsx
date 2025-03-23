@@ -4,17 +4,16 @@ import Button from "../../components/button/index.tsx";
 import Request from "../../utils/request.tsx";
 import WeatherDetails from "../../components/weatherDetails/index.tsx"
 import WeatherNotFound from "../../components/weatherNotFound/index.tsx"
+import Loading from "../../components/loading/index.tsx"
 import { Body, Buttons, Container, WeatherContainer } from "./index.ts";
 
 const Weather = () => {
-  const [inputValue, setInputValue] = useState();
-  const [location, setLocation] = useState(null);
-
-  useEffect(() => {
-    //searchByUserLocation();
-  }, []);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [location, setLocation] = useState<null | boolean | {} >(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const searchByCity = async (city: string) => {
+    setIsLoading(true)
     setLocation(null)
     const response = await Request({
       url: `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(city)}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}&lang=pt_br&units=metric`,
@@ -26,9 +25,11 @@ const Weather = () => {
     }else{
         setLocation(false)
     }
+    setIsLoading(false)
   };
 
   const searchByUserLocation = () => {
+    setIsLoading(true)
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { latitude, longitude } = position.coords;
       const response = await Request({
@@ -46,10 +47,17 @@ const Weather = () => {
         }
       }
     });
+    setIsLoading(false)
   };
+
+  useEffect(() => {
+    searchByUserLocation()
+  }, []);
 
   return (
     <Body>
+
+    {isLoading === true ? <Loading/> :
       <Container>
         <Input inputName="city" onEdit={setInputValue} />
         <Buttons>
@@ -68,7 +76,7 @@ const Weather = () => {
           </WeatherContainer> : <></>
         }
         
-      </Container>
+      </Container>}
     </Body>
   );
 };

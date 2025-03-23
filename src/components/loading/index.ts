@@ -1,9 +1,9 @@
-//import styled from 'styled-components';
+import styled from 'styled-components'
 
-//export const LoadingElement = styled.div`
-//    display: "flex",
-//    flexDirection: "column",
-//    justifyContent: "center",
-//    alignItems: "center",
-//    height: "100%",
-//    flex: 1`;
+export const LoadingElement = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 1`;
