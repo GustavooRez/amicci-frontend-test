@@ -4,13 +4,14 @@ import Button from "../../components/button/index.tsx";
 import Request from "../../utils/request.tsx";
 import WeatherDetails from "../../components/weatherDetails/index.tsx"
 import WeatherNotFound from "../../components/weatherNotFound/index.tsx"
+import { Body, Buttons, Container, WeatherContainer } from "./index.ts";
 
 const Weather = () => {
   const [inputValue, setInputValue] = useState();
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
-    searchByUserLocation();
+    //searchByUserLocation();
   }, []);
 
   const searchByCity = async (city: string) => {
@@ -48,18 +49,27 @@ const Weather = () => {
   };
 
   return (
-    <div>
-      <Input inputName="city" onEdit={setInputValue} />
-      <Button
-        buttonLabel="Pesquisar por cidade"
-        onClick={() => {searchByCity(inputValue)}}
-      />
-      <Button
-        buttonLabel="Pesquisar por endereço"
-        onClick={() => {searchByUserLocation()}}
-      />
-      {location !== null && location !== false ? <WeatherDetails weather={location}/>: location === false ? <WeatherNotFound/> : <></>}
-    </div>
+    <Body>
+      <Container>
+        <Input inputName="city" onEdit={setInputValue} />
+        <Buttons>
+          <Button
+            buttonLabel="Pesquisar por cidade"
+            onClick={() => {searchByCity(inputValue)}}
+          />
+          <Button
+            buttonLabel="Pesquisar por endereço atual"
+            onClick={() => {searchByUserLocation()}}
+          />
+        </Buttons>
+        
+        {location !== null ? <WeatherContainer>
+          {location !== false ? <WeatherDetails weather={location}/> : <WeatherNotFound/>}
+          </WeatherContainer> : <></>
+        }
+        
+      </Container>
+    </Body>
   );
 };
 

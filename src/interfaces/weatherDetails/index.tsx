@@ -1,9 +1,9 @@
 interface WeatherDetailsProps {
     weather:{
         name: string
-        weather: {
+        weather: [{
             description: string
-        },
+        }],
         main: {
             temp: number,
             feels_like: number,
@@ -20,3 +20,5 @@ interface WeatherDetailsProps {
         }
     }
 }
+
+export {WeatherDetailsProps}

@@ -1,9 +1,11 @@
 import React from "react";
+import {ButtonProps} from "../../interfaces/button"
+import { ButtonElement } from "./index.ts";
 
 const Button = ({buttonLabel, onClick}:ButtonProps) => {
 
     return (
-        <button onClick={onClick}>{buttonLabel}</button>
+        <ButtonElement onClick={onClick}>{buttonLabel}</ButtonElement>
     )
 }
 
