@@ -1,15 +1,12 @@
 import React from "react";
 
-const Button = ({buttonLabel, onClick}:ButtonI) => {
+const Button = ({buttonLabel, onClick}:ButtonProps) => {
 
     return (
         <button onClick={onClick}>{buttonLabel}</button>
     )
 }
 
-interface ButtonI {
-    buttonLabel: string,
-    onClick: any
-}
+
 
 export default Button

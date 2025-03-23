@@ -1,5 +1,6 @@
 const Request = async ({url, method, body }: RequestI) => {
-    return await fetch(url, {method});
+    const response = await fetch(url, {method});
+    return response.json()
 }
 
 export default Request
