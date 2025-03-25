@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Amicci Weather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+**Amicci Weather** is an application developed in **React** and **TypeScript** that allows you to query weather data for a city provided by the user or the current location of the device. The project uses **Google Maps** APIs for geolocation and **OpenWeather** to obtain weather information.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Search for weather forecast by city name.
+- Get weather forecast based on the user's current location.
+- Display of information such as temperature, humidity, wind speed, wind chill, sunrise and sunset times.
+- Responsive interface and compatible with mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React 19**
+- **TypeScript**
+- **Styled Components**
+- **Material UI (@mui/material)**
+- **OpenWeather API**
+- **Google Maps API**
+- **React Testing Library**
+- **Cypress**
 
-### `npm test`
+## Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the project locally, you need to have installed:
+- **Node.js** (v18 or higher recommended)
+- **Package manager** (npm or yarn)
 
-### `npm run build`
+## Environment Configuration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Before running the project, create a `.env` file in the project root and add the API keys:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```env
+REACT_APP_OPEN_WEATHER_API_KEY=YOUR_KEY_HERE
+REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_KEY_HERE
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Run the Project
 
-### `npm run eject`
+Clone the repository:
+```sh
+git clone https://github.com/GustavooRez/amicci-frontend-test.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install the dependencies:
+```sh
+npm install # or yarn install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
+```sh
+npm start # or yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The application will be available at: `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+```
+/amicci-weather
+├── cypress/            # E2E Tests
+├── public/             # Static files
+├── src/    
+│ ├── components/       # Reusable components
+│ ├── view/             # Application pages
+│ ├── tests/            # Unit tests of the application
+│ ├── utils/            # Helper functions and API requests
+│ ├── interfaces/       # TypeScript type definitions
+│ ├── app.tsx           # Main component
+│ ├── index.tsx         # React entry point
+├── .env                # Environment variable configuration
+├── cypress.config.ts   # Cypress configuration
+├── package.json        # Dependencies and scripts
+├── README.md           # Project documentation
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Run unit tests:
+```sh
+npm test # or yarn test
+```
 
-### Code Splitting
+### Run tests end-to-end with Cypress:
+```sh
+npx cypress open
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Preview
 
-### Analyzing the Bundle Size
+If you want a preview of the project, you can find its go live version at: https://amicci-frontend-test-seven.vercel.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📲 Contact
 
-### Making a Progressive Web App
+If you have any questions or suggestions, please contact me:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ✉️ Email: gurezende27.gr@gmail.com
+- 👉 LinkedIn: (https://www.linkedin.com/in/gustavo-rezende-dev/)
+- 🌐 GitHub: (https://github.com/GustavooRez)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+💡 **Developed with REACT** 🚀
