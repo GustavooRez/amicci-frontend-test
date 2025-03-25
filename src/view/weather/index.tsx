@@ -51,7 +51,7 @@ const Weather = () => {
   };
 
   useEffect(() => {
-    //searchByUserLocation()
+    searchByUserLocation()
   }, []);
 
   return (
